@@ -1,12 +1,10 @@
-
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
 var cors = require('cors')
 
 
-
-const mongoString = "mongodb+srv://gino-19:testing-pw-19@betopenly-test.qzrefqu.mongodb.net/?retryWrites=true&w=majority"
+const mongoString = process.env.MONGO_URI
 
 mongoose.connect(mongoString);
 const database = mongoose.connection;
