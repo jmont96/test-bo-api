@@ -4,7 +4,7 @@ const routes = require('./routes');
 var cors = require('cors')
 
 
-const mongoString = process.env.MONGO_URI
+const mongoString = "mongodb+srv://gino-19:testing-pw-19@betopenly-test.qzrefqu.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose.connect(mongoString);
 const database = mongoose.connection;
