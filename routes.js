@@ -69,6 +69,24 @@ router.get('/user/:userId', async (req, res) => {
 })
 
 //Get by ID Method
+router.post('/user', async (req, res) => {
+    try {
+        const {username, picture, email} = req.body;
+
+        const userId = Math.floor(Math.random() * 100000)
+
+        const user = {
+            username, picture, email, balance: 1000, userId
+        }
+        const userDoc = await UserModel.create(user)
+        
+        res.json(userDoc)
+    } catch (e) {
+        console.error(e)
+    }
+})
+
+//Get by ID Method
 router.get('/token/:id', async (req, res) => {
     try {
         const {id} = req.params
